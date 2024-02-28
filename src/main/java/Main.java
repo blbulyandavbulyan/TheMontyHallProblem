@@ -19,13 +19,13 @@ public class Main {
             System.out.printf("Эксперимент %d\n", i+1);
             {
                 final int winsWithoutChangingDoor = x.winsWithoutChangingDoor();
-                System.out.printf("\tКоличество выигрышей, оставшись при первоначальном выборе: %d, вероятность: %.2f\n",
-                        winsWithoutChangingDoor, (double) winsWithoutChangingDoor / totalGames);
+                System.out.printf("\tКоличество выигрышей, оставшись при первоначальном выборе: %d, количество поражений: %d, вероятность: %.2f\n",
+                        winsWithoutChangingDoor, totalGames - winsWithoutChangingDoor, (double) winsWithoutChangingDoor / totalGames);
             }
             {
                 int winsWithChangingDoor = x.winsWithChangingDoor();
-                System.out.printf("\tКоличество выигрышей, изменив выбор: %d, вероятность: %.2f\n",
-                        winsWithChangingDoor, (double)winsWithChangingDoor/totalGames);
+                System.out.printf("\tКоличество выигрышей, изменив выбор: %d, количество поражений: %d, вероятность: %.2f\n",
+                        winsWithChangingDoor, totalGames - winsWithChangingDoor, (double)winsWithChangingDoor/totalGames);
             }
         }
         double averageWinsWithoutChangingDoor = history.stream()
